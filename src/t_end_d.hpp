@@ -2,25 +2,21 @@
 #include <iostream>
 
 
-class tEndD {
+class TEndD {
 private:
   time_t _systemTime;
 
 public:
-  tEndD() {
+  TEndD() {
     time_t now = time(nullptr);
     _systemTime = now;
   }
 
-  tEndD(time_t systemTime) { _systemTime = systemTime; }
+  TEndD(time_t systemTime) { _systemTime = systemTime; }
 
-  tEndD(const tEndD &other) { _systemTime = other._systemTime; }
+  TEndD(const TEndD &other) { _systemTime = other._systemTime; }
 
-  ~tEndD() {
-    std::cout << "Объект ";
-    print();
-    std::cout << " уничтожен" << std::endl;
-  }
+  ~TEndD();
 
   time_t getSystemTime() { return _systemTime; }
   void setSystemTime(time_t time) { _systemTime = time; }

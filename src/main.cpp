@@ -3,7 +3,8 @@
 #include <iostream>
 
 int main() {
-  tEndD t1;
+  TEndD t1;
+  std::cout << "Конструктор по умолчанию: ";
   t1.print();
 
   std::tm tm{};
@@ -12,10 +13,11 @@ int main() {
   tm.tm_mon = 11 - 1;
   tm.tm_mday = 6;
   time_t birthday = std::mktime(&tm);
-  tEndD tBirth(birthday);
-  tEndD tBirthCopy(tBirth);
+  TEndD tBirth(birthday);
+  TEndD tBirthCopy(tBirth);
+  std::cout << "Объект 1: ";
   tBirth.print();
-  tBirthCopy.setSystemTime(tBirthCopy.getSystemTime() + 1000);
+  std::cout << "Объект 2: ";
   tBirthCopy.print();
   return 0;
 }
